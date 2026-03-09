@@ -1,0 +1,462 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* FLOW Super App - Deep Black & Muted Gold Theme */
+:root {
+  /* Deep black background */
+  --background: #000000;
+  --foreground: #FFFFFF;
+  
+  /* Cards with subtle glass effect */
+  --card: rgba(20, 20, 20, 0.8);
+  --card-foreground: #FFFFFF;
+  
+  /* Popover */
+  --popover: rgba(15, 15, 15, 0.95);
+  --popover-foreground: #FFFFFF;
+  
+  /* Primary - Muted Gold */
+  --primary: #D4AF37;
+  --primary-foreground: #000000;
+  
+  /* Secondary - Dark gray */
+  --secondary: #1A1A1A;
+  --secondary-foreground: #FFFFFF;
+  
+  /* Muted */
+  --muted: #0D0D0D;
+  --muted-foreground: #888888;
+  
+  /* Accent - Gold */
+  --accent: #D4AF37;
+  --accent-foreground: #000000;
+  
+  /* Destructive */
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Borders */
+  --border: rgba(212, 175, 55, 0.2);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #D4AF37;
+  
+  /* Charts */
+  --chart-1: #D4AF37;
+  --chart-2: #B8860B;
+  --chart-3: #FFD700;
+  --chart-4: #DAA520;
+  --chart-5: #F5DEB3;
+  
+  --radius: 1rem;
+  
+  /* Sidebar */
+  --sidebar: #0A0A0A;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #D4AF37;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(212, 175, 55, 0.15);
+  --sidebar-ring: #D4AF37;
+  
+  /* Custom FLOW colors */
+  --gold: #D4AF37;
+  --gold-light: #E5C76B;
+  --gold-dark: #B8860B;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --card: rgba(20, 20, 20, 0.8);
+  --card-foreground: #FFFFFF;
+  --popover: rgba(15, 15, 15, 0.95);
+  --popover-foreground: #FFFFFF;
+  --primary: #D4AF37;
+  --primary-foreground: #000000;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #FFFFFF;
+  --muted: #0D0D0D;
+  --muted-foreground: #888888;
+  --accent: #D4AF37;
+  --accent-foreground: #000000;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(212, 175, 55, 0.2);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #D4AF37;
+  --chart-1: #D4AF37;
+  --chart-2: #B8860B;
+  --chart-3: #FFD700;
+  --chart-4: #DAA520;
+  --chart-5: #F5DEB3;
+  --sidebar: #0A0A0A;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #D4AF37;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(212, 175, 55, 0.15);
+  --sidebar-ring: #D4AF37;
+}
+
+@theme inline {
+  --font-sans: 'Plus Jakarta Sans', 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-glass: var(--glass);
+  --color-glass-border: var(--glass-border);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Glassmorphism utilities */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-gold {
+    background: rgba(212, 175, 55, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.3);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.5);
+  }
+  
+  /* Safe area padding for mobile */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+}
+
+/* Premium Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes scale-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes border-glow {
+  0%, 100% {
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    border-color: rgba(212, 175, 55, 0.6);
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.6s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out forwards;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-scale-bounce {
+  animation: scale-bounce 2s ease-in-out infinite;
+}
+
+.animate-heart-beat {
+  animation: heart-beat 0.6s ease-out;
+}
+
+.animate-border-glow {
+  animation: border-glow 2s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+.stagger-7 { animation-delay: 0.35s; }
+.stagger-8 { animation-delay: 0.4s; }
+
+/* Smooth transitions */
+.transition-premium {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-bounce {
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.transition-spring {
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.15);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+/* Active states */
+.active-scale:active {
+  transform: scale(0.96);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Screen transitions */
+.screen-enter {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.screen-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
